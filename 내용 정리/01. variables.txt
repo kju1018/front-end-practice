@@ -1,0 +1,18 @@
+
+1. var
+    -2015년 이전 문법(ES5:ECMAScript 5)
+    -block level 지원 X
+    -변수명 중복 가능
+
+2. let
+    -2015년 이후 문법(ES6)
+    -block level 지원
+    -변수명 중복 불가
+    -변수값 수정 가능
+
+3. const
+    -2015년 이후 문법
+    -block level 지원
+    -변수명 중복 불가
+    -변수값 수정 불가
+    

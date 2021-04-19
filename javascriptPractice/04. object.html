@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="common/bootstrap-4.6.0/css/bootstrap.min.css">
+		<script src="common/js/jquery-3.5.1.min.js"></script>
+		<script src="common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>	
+		<script src="common/bootstrap-4.6.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="card">
+			<div class="card-header">
+				JavaScripts Operators
+			</div>
+			<div class="card-body">
+				<script>
+                    const car = {
+                        //property
+                        type:"승용차",
+                        model:"그랜저",
+                        color:"검정",
+                        speed:0,
+                        owner:null,
+
+                        //method
+                        run: function() {
+                            //setSpeed(60)은 에러
+                            //메소드 안에서 다른 메소드 실행시 this를 붙여야함
+                            this.setSpeed(60);
+                        },
+
+                        setSpeed: function(speed) {
+                            this.speed = speed;
+                        },
+
+                        getSpeed: function() {
+                            return this.speed;
+                        }
+                    }
+
+                    car.run();
+                    console.log(car.getSpeed());
+                    car.setSpeed(100);
+                    console.log(car.getSpeed());
+
+                </script>
+			</div>
+		</div>
+	</body>
+</html>

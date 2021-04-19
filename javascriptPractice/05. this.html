@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="common/bootstrap-4.6.0/css/bootstrap.min.css">
+		<script src="common/js/jquery-3.5.1.min.js"></script>
+		<script src="common/bootstrap-4.6.0/js/bootstrap.bundle.min.js"></script>	
+		<script src="common/bootstrap-4.6.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="card">
+			<div class="card-header">
+				JavaScripts Operators
+			</div>
+			<div class="card-body">
+				<script>
+                    //---------------------------------------------------------------------------------------------
+                    // 윈도우 객체 참조 (기본)
+                    console.log("window" + this); 
+
+                    //----------------------------------------------------------------------------------------------
+                </script>
+
+                <script>
+                    //객체 생성에서 메소드 this
+                    const person1 = {
+                        age:5,
+
+                        eat: function() {
+                            console.log("eat: "+this); 
+                            //function 함수 내부의 this는 자신을 호출한 객체를 참조
+                            console.log("eat this.age: "+this.age); 
+                            //this를 사용해야함
+                            
+                        }
+                    }//객체 생성
+                    person1.eat();
+
+                    const method = person1.eat;
+                    // method 변수에 person1.eat 메소드를 할당
+                    method();
+
+                    //window 객체 참조
+                    //---------------------------------------------------------------------------------------------
+
+                </script>
+
+                <script>
+                //객체 생성해서 화살표 함수 this
+                    age:3;
+                    name:"이름"
+                    const person2 = {
+                        name:"홍길동",
+                        age: 25, 
+                        walk: () => {
+                            console.log(this); 
+                
+                            this.age = 30;
+                            name="이름 변경";
+                            //여기 this.age는 위에 그냥 age(46번째 줄)
+                            //화살표 함수 내부의 this는 상위의 this를 찾아서 지정
+                            //근데 위에는 this가 없음 그냥 name, age만 있음
+                            //this 없어도 위에 age 
+                            
+                        }
+                        //function과 화살표 함수의 차이. function 함수 내부의 this는 자신을 호출한 객체이고
+                        //화살표 함수는 상위 this를 가르킨다.
+                    };
+                    person2.walk();
+                    console.log("person.age: " + person2.age);
+                    console.log("person.name: " + person2.name);
+                    console.log("field age:" + age);
+                    console.log("field name:" + name);
+                    //---------------------------------------------------------------------------------------------
+                </script>
+
+                <script>
+                    const People1 = function() {
+                        this.name = "홍길동";//2.여기 this
+                        this.age = 45;
+                        this.walk = () => {
+                            console.log(this);//1. 여기 this는
+                            console.log(this.age);
+                            console.log(age);//그냥 age는 위에 age(46줄)
+                        }
+                    }; //Prototype을 이용한 클래스 선언
+
+                    var p1 = new People1();//클래스로부터 객체 생성
+                    p1.walk();
+
+                    //---------------------------------------------------------------------------------------------
+
+                </script>
+			</div>
+		</div>
+	</body>
+</html>

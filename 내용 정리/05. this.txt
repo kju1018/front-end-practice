@@ -1,0 +1,38 @@
+
+1. 윈도우 객체 참조(기본)
+    
+    console.log("window" + this); 
+
+
+2. 객체 생성에서 메소드 this
+
+    const 객체명 = {
+
+        eat: function() {
+            this
+            //function 함수 내부의 this는 자신을 호출한 객체를 참조
+        }//메소드
+    }
+
+
+3. 객체 생성에서 화살표 함수 this를
+
+    const 객체명 = {
+
+        walk: () => {
+            this
+            //화살표 함수는 상위 this를 가르킨다.
+        }//메소드
+    }
+
+4. 클래스에서 this
+
+    const People1 = function() {
+        this.name = "홍길동";//2.여기 this
+        this.age = 45;
+        this.walk = () => {
+            console.log(this);//1. 여기 this는
+            console.log(this.age);
+            console.log(age);//그냥 age는 위에 age(46줄)
+        }
+    }; //Prototype을 이용한 클래스 선언

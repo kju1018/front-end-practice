@@ -1,0 +1,19 @@
+
+1. object의 구성요소
+    -property (자바 클래스에 필드?)
+    -method
+
+2. object에서 객체가 갖고 있는건 다 this를 붙여야함
+    -run: function() {
+            //setSpeed(60)은 에러
+            //메소드 안에서 다른 메소드 실행시 this를 붙여야함
+            this.setSpeed(60);
+        },
+
+3. method, function
+    - eat: function(){}    ------> method
+
+    실행할때 person.eat();
+
+    - function() {} ------> function(그냥 함수)
+    - 02.function.txt
